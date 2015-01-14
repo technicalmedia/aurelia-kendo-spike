@@ -1,1 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+### Folders ###
+node_modules
+jspm_packages
+bin
+obj
+### Files ###
+aurelia-kendo-spike.kproj
+aurelia-kendo-spike.kproj.user
+

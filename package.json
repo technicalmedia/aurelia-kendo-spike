@@ -49,5 +49,8 @@
       "font-awesome": "^4.2.0",
       "jQuery-Mask-Plugin": "github:igorescobar/jQuery-Mask-Plugin@^1.11.2"
     }
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.1"
   }
 }

@@ -6,7 +6,6 @@ define(["require", "exports", "aurelia-http-client"], function (require, exports
             this.heading = "Flickr";
             this.images = [];
         }
-
         Flickr.prototype.activate = function () {
             var _this = this;
             return this.http.jsonp(url).then(function (response) {

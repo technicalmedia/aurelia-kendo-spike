@@ -5,13 +5,12 @@ define(["require", "exports", "aurelia-router"], function (require, exports, aur
             this.heading = "Child Router";
             router.configure(function (config) {
                 config.map([
-                    {route: ["", "welcome"], moduleId: "welcome", nav: true, title: "Welcome"},
-                    {route: "flickr", moduleId: "flickr", nav: true},
-                    {route: "child-router", moduleId: "child-router", nav: true, title: "Child Router"}
+                    { route: ["", "welcome"], moduleId: "welcome", nav: true, title: "Welcome" },
+                    { route: "flickr", moduleId: "flickr", nav: true },
+                    { route: "child-router", moduleId: "child-router", nav: true, title: "Child Router" }
                 ]);
             });
         }
-
         Welcome.inject = [aur.Router];
         return Welcome;
     })();

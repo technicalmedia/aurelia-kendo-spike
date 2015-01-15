@@ -6,7 +6,6 @@ define(["require", "exports"], function (require, exports) {
             this.firstName = "John";
             this.lastName = "Doe";
         }
-
         Object.defineProperty(Welcome.prototype, "fullName", {
             get: function () {
                 return this.firstName + " " + this.lastName;

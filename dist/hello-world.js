@@ -2,7 +2,6 @@ define(["require", "exports", "aurelia-framework"], function (require, exports, 
     var HelloWorld = (function () {
         function HelloWorld() {
         }
-
         HelloWorld.annotations = function () {
             return [new au.CustomElement('hello-world'), new au.Property("name", "callBack")];
         };

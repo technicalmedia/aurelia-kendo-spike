@@ -15,6 +15,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.1",
     "font-awesome": "npm:font-awesome@4.2.0",
     "jQuery-Mask-Plugin": "github:igorescobar/jQuery-Mask-Plugin@1.11.2",
+    "kendo-ui-core": "github:telerik/kendo-ui-core@2014.3.1314",
     "github:aurelia/binding@0.1.2": {
       "aurelia-metadata": "github:aurelia/metadata@0.1.1",
       "aurelia-task-queue": "github:aurelia/task-queue@0.1.1"

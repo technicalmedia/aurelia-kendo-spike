@@ -1,4 +1,4 @@
-define(["require", "exports"], function (require, exports) {
+define(["require", "exports"], function(require, exports) {
     /// <reference path="../Scripts/typings/aurelia/aurelia.d.ts"/>
     var Welcome = (function () {
         function Welcome() {
@@ -13,6 +13,7 @@ define(["require", "exports"], function (require, exports) {
             enumerable: true,
             configurable: true
         });
+
         Welcome.prototype.welcome = function () {
             alert("Welcome, " + this.fullName + "!");
         };

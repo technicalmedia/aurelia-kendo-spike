@@ -18,6 +18,7 @@ var tools = require('aurelia-tools');
 var path = {
     source: 'src/**/*.js',
     sourceTS: './src/**/*.ts',
+    sourceJSON: './src/**/*.json',
     html: 'src/**/*.html',
     output: 'dist/',
     doc: './doc'
@@ -46,7 +47,14 @@ gulp.task('clean', function () {
     return gulp.src([path.output])
         .pipe(vinylPaths(del));
 });
+gulp.task('build-json', function () {
 
+    return gulp.src(path.sourceJSON)
+        .pipe(plumber())
+        .pipe(gulp.dest(path.output))
+        .pipe(browserSync.reload({stream: true}));
+
+});
 gulp.task('build-amd', function () {
 
     return gulp.src(path.sourceTS)
@@ -106,7 +114,7 @@ gulp.task('changelog', function (callback) {
 gulp.task('build', function (callback) {
     return runSequence(
         'clean',
-        ['build-amd', 'build-html'],
+        ['build-json', 'build-amd', 'build-html'],
         callback
     );
 });
@@ -130,7 +138,7 @@ gulp.task('serve', ['build'], function (done) {
 });
 
 gulp.task('watch', ['serve'], function () {
-    var watcher = gulp.watch([path.sourceTS, path.source, path.html], ['build']);
+    var watcher = gulp.watch([path.sourceJSON, path.sourceTS, path.source, path.html], ['build']);
     watcher.on('change', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });

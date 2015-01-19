@@ -8,28 +8,31 @@
 import products = require("./services/products");
 
 export class KendoTest {
-	constructor() {
+    constructor() {
         console.log("kendo-test constructed :)");
-	}
+    }
 
-	attached() {
+    attached() {
         console.log("kendo-test attached :)");
 
-		    var dataSource = new kendo.data.DataSource({
-                data: products.productArray,
-                pageSize: 21
-            });
+        var dataSource = new kendo.data.DataSource({
+            type: "json",
+            transport: {
+                read: "./dist/services/products.json"
+            },
+            pageSize: 21
+        });
 
-            $("#pager").kendoPager({
-                dataSource: dataSource
-            });
+        $("#pager").kendoPager({
+            dataSource: dataSource
+        });
 
-            $("#listView").kendoListView({
-                dataSource: dataSource,
-                template: kendo.template($("#template").html())
-            });
+        $("#listView").kendoListView({
+            dataSource: dataSource,
+            template: kendo.template($("#template").html())
+        });
 
-	}
+    }
 }
 
 // http://demos.telerik.com/kendo-ui/content/shared/js/products.js

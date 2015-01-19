@@ -1,5 +1,4 @@
 /// <reference path="../Scripts/typings/aurelia/aurelia.d.ts"/>
-
 import aur = require("aurelia-router");
 
 export class App {
@@ -12,7 +11,9 @@ export class App {
                 {route: ["", "welcome"], moduleId: "welcome", nav: true, title: "Welcome to VS/TS"},
                 {route: "flickr", moduleId: "flickr", nav: true},
                 {route: "child-router", moduleId: "child-router", nav: true, title: "Child Router"},
-                {route: ["kendo-test"], moduleId: "kendo-test", nav: true, title: "Kendo Test"}
+                {route: ["kendo-test"], moduleId: "kendo-test", nav: true, title: "Kendo Test"},
+                {route: ["kendo-tes-jsont"], moduleId: "kendo-test-json", nav: true, title: "Kendo Test json"}
+
             ]);
         });
     }

@@ -5,8 +5,7 @@
 
 //import $ = require("jquery");
 //import k = require("kendo");
-
-var products = products;
+import products = require("./services/products");
 
 export class KendoTest {
 	constructor() {
@@ -17,7 +16,7 @@ export class KendoTest {
 		alert("kendo-test attached :)");
 
 		    var dataSource = new kendo.data.DataSource({
-                data: products,
+                data: products.productArray,
                 pageSize: 21
             });
 

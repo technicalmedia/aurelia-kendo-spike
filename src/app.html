@@ -1,6 +1,7 @@
 <template>
+    <import src='./nav-bar'></import>
+    <nav-bar router.bind="router"></nav-bar>
 
-    <import src='./CustomComponents'></import>
     <div class="page-host">
         <router-view></router-view>
     </div>
@@ -8,6 +9,3 @@
 
 </template>
 
-<a router-href=“url:/posts'; params.bind: { id:object.id }”>Something</a>
-<a router-action=“url:/posts, params: { id:object.id }”>Something</a>
-<button click.bind="do()"></button>

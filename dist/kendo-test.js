@@ -2,11 +2,7 @@
 /// <reference path="../Scripts/typings/jquery/jquery.d.ts"/>
 /// <reference path="../Scripts/typings/kendo/kendo.all.d.ts"/>
 /// <reference path="services/products.ts"/>
-define(["require", "exports"], function(require, exports) {
-    //import $ = require("jquery");
-    //import k = require("kendo");
-    var products = products;
-
+define(["require", "exports", "./services/products"], function(require, exports, products) {
     var KendoTest = (function () {
         function KendoTest() {
             alert("kendo-test constructed :)");
@@ -15,7 +11,7 @@ define(["require", "exports"], function(require, exports) {
             alert("kendo-test attached :)");
 
             var dataSource = new kendo.data.DataSource({
-                data: products,
+                data: products.productArray,
                 pageSize: 21
             });
 

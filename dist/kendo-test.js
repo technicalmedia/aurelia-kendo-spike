@@ -2,7 +2,7 @@
 /// <reference path="../Scripts/typings/jquery/jquery.d.ts"/>
 /// <reference path="../Scripts/typings/kendo/kendo.all.d.ts"/>
 /// <reference path="services/products.ts"/>
-define(["require", "exports", "./services/products"], function(require, exports, products) {
+define(["require", "exports", "services/products"], function(require, exports, products) {
     var KendoTest = (function () {
         function KendoTest() {
             alert("kendo-test constructed :)");

@@ -3,7 +3,7 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
 var to5 = require('gulp-6to5');
-var typescript = require('gulp-tsc');
+var tsc = require('gulp-typescript-compiler');
 var stylish = require('jshint-stylish');
 var yuidoc = require("gulp-yuidoc");
 var changelog = require('conventional-changelog');
@@ -17,7 +17,7 @@ var tools = require('aurelia-tools');
 
 var path = {
     source: 'src/**/*.js',
-    sourceTS: 'src/**/*.ts',
+    sourceTS: './src/**/*.ts',
     html: 'src/**/*.html',
     output: 'dist/',
     doc: './doc'
@@ -51,9 +51,11 @@ gulp.task('build-amd', function () {
 
     return gulp.src(path.sourceTS)
         .pipe(plumber())
-        .pipe(typescript({
+        .pipe(tsc({
             module: 'amd',
-            target: 'es5'
+            target: 'ES5',
+            sourcemap: false,
+            logErrors: true
         }))
         .pipe(gulp.dest(path.output))
         .pipe(browserSync.reload({stream: true}));

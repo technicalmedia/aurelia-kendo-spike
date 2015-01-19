@@ -1,4 +1,5 @@
 /// <reference path="../Scripts/typings/aurelia/aurelia.d.ts"/>
+
 import aur = require("aurelia-router");
 
 export class App {

@@ -1,3 +1,4 @@
+/// <reference path="../Scripts/typings/aurelia/aurelia.d.ts"/>
 define(["require", "exports", "aurelia-router"], function(require, exports, aur) {
     var App = (function () {
         function App(router) {

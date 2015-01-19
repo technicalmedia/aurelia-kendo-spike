@@ -5,7 +5,7 @@
 
 //import $ = require("jquery");
 //import k = require("kendo");
-import products = require("./services/products");
+import products = require("services/products");
 
 export class KendoTest {
 	constructor() {

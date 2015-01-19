@@ -12,15 +12,14 @@ export interface  IProduct {
     UnitsOnOrder:number;
     ReorderLevel:number;
     Discontinued:boolean;
-    UnitPrice:number;
-    UnitPrice:number;
     Category : {
         CategoryID : number;
         CategoryName : string;
         Description : string;
     }
 }
-Array<IProduct> = new Array<IProduct>[{
+
+export var productArray: Array<IProduct> = [{
     ProductID: 1,
     ProductName: "Chai",
     SupplierID: 1,

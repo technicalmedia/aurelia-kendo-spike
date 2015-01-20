@@ -5,9 +5,11 @@
 define(["require", "exports"], function(require, exports) {
     var AuKendoTest = (function () {
         function AuKendoTest() {
+            this.items = [];
             console.log("au-kendo-test constructed :)");
         }
         AuKendoTest.prototype.attached = function () {
+            var _this = this;
             console.log("au-kendo-test attached :)");
 
             var dataSource = new kendo.data.DataSource({
@@ -17,14 +19,15 @@ define(["require", "exports"], function(require, exports) {
                 },
                 pageSize: 21
             });
+            dataSource.fetch();
+
+            this.items = dataSource.view();
+            dataSource.bind("change", function (e) {
+                _this.items = dataSource.view();
+            });
 
             $("#pager").kendoPager({
                 dataSource: dataSource
-            });
-
-            $("#listView").kendoListView({
-                dataSource: dataSource,
-                template: kendo.template($("#template").html())
             });
         };
         return AuKendoTest;

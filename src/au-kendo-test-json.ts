@@ -10,6 +10,8 @@ export class AuKendoTest {
         console.log("au-kendo-test constructed :)");
     }
 
+    items: Array = [];
+
     attached() {
         console.log("au-kendo-test attached :)");
 
@@ -20,16 +22,16 @@ export class AuKendoTest {
             },
             pageSize: 21
         });
+        dataSource.fetch();
+
+        this.items = dataSource.view();
+        dataSource.bind("change", (e) => {
+            this.items = dataSource.view();
+        });
 
         $("#pager").kendoPager({
             dataSource: dataSource
         });
-
-        $("#listView").kendoListView({
-            dataSource: dataSource,
-            template: kendo.template($("#template").html())
-        });
-
     }
 }
 
